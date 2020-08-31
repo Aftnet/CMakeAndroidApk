@@ -69,6 +69,23 @@
                 "reveal": "always",
                 "panel": "shared"
             }
+        },
+        {
+            //"dependsOn": "Upload to device",
+            "label": "Run on device",
+            "type": "shell",
+            "command": "C:/Program Files (x86)/Android/android-sdk/platform-tools/adb.exe",
+            "args": [
+                "shell", "am", "start",
+                "-n", "com.example.native_activity/android.app.NativeActivity",
+                "-a", "android.intent.action.MAIN",
+                "-c", "android.intent.category.LAUNCHER",
+            ],
+            "problemMatcher": [ ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
         }
     ]
 }
