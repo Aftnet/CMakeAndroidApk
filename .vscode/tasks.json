@@ -27,7 +27,8 @@
                 "-DCMAKE_TOOLCHAIN_FILE='C:/Program Files (x86)/Android/android-sdk/ndk-bundle/build/cmake/android.toolchain.cmake'",
                 "-DCMAKE_MAKE_PROGRAM='C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe'",
                 "-DANDROID_PLATFORM=latest",
-                "-DANDROID_ABI=x86_64"
+                "-DANDROID_ABI=x86_64",
+                "-DCMAKE_BUILD_TYPE=Debug"
             ],
             "problemMatcher": [],
             "presentation": {
@@ -71,7 +72,7 @@
             }
         },
         {
-            //"dependsOn": "Upload to device",
+            "dependsOn": "Upload to device",
             "label": "Run on device",
             "type": "shell",
             "command": "C:/Program Files (x86)/Android/android-sdk/platform-tools/adb.exe",

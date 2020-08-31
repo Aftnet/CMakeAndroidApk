@@ -315,6 +315,8 @@ ASensorManager* AcquireASensorManagerInstance(android_app* app) {
 void android_main(struct android_app* state) {
     struct engine engine{};
 
+    __android_log_write(android_LogPriority::ANDROID_LOG_DEBUG, "TestTag", "App started");
+
     memset(&engine, 0, sizeof(engine));
     state->userData = &engine;
     state->onAppCmd = engine_handle_cmd;
