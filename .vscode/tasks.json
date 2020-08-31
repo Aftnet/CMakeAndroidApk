@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-r", "${workspaceRoot}/build"                
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "CMake Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-G", "Ninja",
+                "-S", "${workspaceRoot}/src",
+                "-B", "${workspaceRoot}/build",
+                "-DCMAKE_TOOLCHAIN_FILE='C:/Program Files (x86)/Android/android-sdk/ndk-bundle/build/cmake/android.toolchain.cmake'",
+                "-DCMAKE_MAKE_PROGRAM='C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe'",
+                "-DANDROID_PLATFORM=latest",
+                "-DANDROID_ABI=x86_64",
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        }
+    ]
+}
