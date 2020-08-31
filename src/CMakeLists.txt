@@ -19,7 +19,7 @@ function(FIND_ANDROID_BUILD_TOOLS)
 endfunction()
 
 function(FIND_ANDROID_PLATFORM_PATH)
-    get_filename_component(ANDROID_PLATFORM_PATH "${ANDROID_NDK}/../platforms/android-${ANDROID_PLATFORM}" ABSOLUTE)
+    get_filename_component(ANDROID_PLATFORM_PATH "${ANDROID_NDK}/../platforms/${ANDROID_PLATFORM}" ABSOLUTE)
     set(ANDROID_PLATFORM_PATH "${ANDROID_PLATFORM_PATH}" PARENT_SCOPE)
 endfunction()
 

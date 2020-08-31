@@ -22,14 +22,33 @@
             "command": "cmake",
             "args": [
                 "-G", "Ninja",
-                "-S", "${workspaceRoot}/src",
-                "-B", "${workspaceRoot}/build",
+                "-S", "'${workspaceRoot}/src'",
+                "-B", "'${workspaceRoot}/build'",
                 "-DCMAKE_TOOLCHAIN_FILE='C:/Program Files (x86)/Android/android-sdk/ndk-bundle/build/cmake/android.toolchain.cmake'",
                 "-DCMAKE_MAKE_PROGRAM='C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe'",
                 "-DANDROID_PLATFORM=latest",
-                "-DANDROID_ABI=x86_64",
+                "-DANDROID_ABI=x86_64"
             ],
             "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "cmake",
+            "args": [
+                "--build",
+                "'${workspaceRoot}/build'",
+                "-v"
+            ],
+            "problemMatcher": [ "$gcc" ],
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
