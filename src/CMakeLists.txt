@@ -64,6 +64,7 @@ foreach(FILE IN LISTS RES_FILES)
 endforeach()
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND cmake -E rm -f resources.zip native-activity.apk native-activity.apk.unaligned
     COMMAND ${ANDROID_BUILD_TOOLS}/aapt2 ARGS compile -v --dir res -o resources.zip
     COMMAND ${ANDROID_BUILD_TOOLS}/aapt2 ARGS link -v -I "${ANDROID_PLATFORM_PATH}/android.jar" -o ${PROJECT_NAME}.apk.unaligned --manifest AndroidManifest.xml resources.zip
     COMMAND ${ANDROID_BUILD_TOOLS}/aapt ARGS add -v ${PROJECT_NAME}.apk.unaligned "lib/${ANDROID_ABI}/$<TARGET_FILE_NAME:${PROJECT_NAME}>"

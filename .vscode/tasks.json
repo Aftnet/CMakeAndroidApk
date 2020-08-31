@@ -53,6 +53,22 @@
                 "reveal": "always",
                 "panel": "shared"
             }
+        },
+        {
+            "dependsOn": "Build",
+            "label": "Upload to device",
+            "type": "shell",
+            "command": "C:/Program Files (x86)/Android/android-sdk/platform-tools/adb.exe",
+            "args": [
+                "install",
+                "-r",
+                "'${workspaceRoot}/build/packing/native-activity.apk'"
+            ],
+            "problemMatcher": [ ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
         }
     ]
 }
